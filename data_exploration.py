@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('property_prices.csv')
 print(data.dtypes)
 
-# Sélectionner + afficher+calculer la corrélation
+# Sélectionner + afficher+calculer la matrice corrélation
 numeric_data = data.select_dtypes(exclude='object') 
 print(numeric_data.head())
 correlation_matrix = numeric_data.corr()
@@ -84,6 +84,9 @@ plt.title('Distribution du Nombre de Chambres')
 plt.xlabel('Nombre de Chambres')
 plt.ylabel('Fréquence')
 plt.show()
+
+
+
 
 
 
