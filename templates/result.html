@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat - Estimation Immobilière</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('../static/images/immobilier.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        .header {
+            background-color: rgba(4, 46, 73, 0.9);
+            padding: 10px 0;
+            margin-bottom: 3rem;
+        }
+        
+        .result-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(9, 25, 97, 0.2);
+        }
+        
+        .price-display {
+            font-size: 2.5rem;
+            color: rgb(32, 2, 204);
+            font-weight: bold;
+            margin: 1rem 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .details-card {
+            margin-top: 2rem;
+            border-left: 4px solid rgb(4, 28, 43);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        .list-group-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-outline-primary {
+            color: #fff;
+            border-color: #fff;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-title {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header text-center">
+        <div class="container">
+            <h1>Résultat de l'estimation</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="result-container text-center">
+            <h2>Votre estimation</h2>
+            <div class="price-display">{{ price }}</div>
+            
+            <div class="card details-card text-start">
+                <div class="card-body">
+                    <h5 class="card-title">Détails de la propriété</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Type:</strong> {{ data.property_type }}</li>
+                        <li class="list-group-item"><strong>Pièces:</strong> {{ data.room_count }}</li>
+                        <li class="list-group-item"><strong>Salles de bain:</strong> {{ data.bathroom_count }}</li>
+                        <li class="list-group-item"><strong>Surface:</strong> {{ data.size }} m²</li>
+                        <li class="list-group-item"><strong>Localisation:</strong> {{ data.city }} ({{ data.region }})</li>
+                        <li class="list-group-item"><strong>Transaction:</strong> {{ data.type }}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <a href="/" class="btn btn-outline-primary">Nouvelle estimation</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
